@@ -1,19 +1,16 @@
 import nltk
 import numpy as np
 
-#не для русских слов xd
-from nltk.stem.porter import PorterStemmer
-stemmer = PorterStemmer()
+from nltk.tokenize import word_tokenize
+from nltk.stem.snowball import RussianStemmer
 
-#Для русских слов
-#from nltk.stem.snowball import SnowballStemmer
-#stemmer = SnowballStemmer("russian")
+stemmer = RussianStemmer()
 
-def tokenize(sentence):
-    return nltk.word_tokenize(sentence)
+def tokenize_russian(sentence):
+    return word_tokenize(sentence, language='russian')
 
 def stem(word):
-    return stemmer.stem(word.lower())
+    return stemmer.stem(word)
 
 def bag_of_words(tokenized_sentence, all_words):
     tokenized_sentence = [stem(w) for w in tokenized_sentence]
