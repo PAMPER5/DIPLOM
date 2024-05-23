@@ -1,83 +1,82 @@
 {
     "intents": [
       {
-        "tag": "greeting",
+        "tag": "приветствие",
         "patterns": [
-          "Hi",
-          "Hey",
-          "How are you",
-          "Is anyone there?",
-          "Hello",
-          "Good day"
+          "Привет",
+          "Эй",
+          "Как дела?",
+          "Кто-нибудь здесь?",
+          "Здравствуйте",
+          "Добрый день"
         ],
         "responses": [
-          "Hey :-)",
-          "Hello, thanks for visiting",
-          "Hi there, what can I do for you?",
-          "Hi there, how can I help?"
+          "Привет! :-)",
+          "Здравствуйте, спасибо, что зашли",
+          "Привет, чем могу помочь?",
+          "Привет, в чем вопрос?"
         ]
       },
       {
-        "tag": "goodbye",
-        "patterns": ["Bye", "See you later", "Goodbye"],
+        "tag": "прощание",
+        "patterns": ["Пока", "До свидания", "До встречи"],
         "responses": [
-          "See you later, thanks for visiting",
-          "Have a nice day",
-          "Bye! Come back again soon."
+          "До скорой встречи, спасибо за визит",
+          "Хорошего дня",
+          "Пока! Заходите еще."
         ]
       },
       {
-        "tag": "thanks",
-        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-        "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        "tag": "благодарность",
+        "patterns": ["Спасибо", "Благодарю", "Это полезно", "Огромное спасибо!"],
+        "responses": ["Рады помочь!", "Всегда пожалуйста!", "Вам приятно"]
       },
       {
-        "tag": "items",
+        "tag": "товары",
         "patterns": [
-          "Which items do you have?",
-          "What kinds of items are there?",
-          "What do you sell?"
+          "Какие товары у вас есть?",
+          "Какие виды товаров есть?",
+          "Что вы продаете?"
         ],
         "responses": [
-          "We sell coffee and tea",
-          "We have coffee and tea"
+          "Мы продаем кофе и чай",
+          "У нас есть кофе и чай"
         ]
       },
       {
-        "tag": "payments",
+        "tag": "оплата",
         "patterns": [
-          "Do you take credit cards?",
-          "Do you accept Mastercard?",
-          "Can I pay with Paypal?",
-          "Are you cash only?"
+          "Вы принимаете кредитные карты?",
+          "Вы принимаете Mastercard?",
+          "Могу ли я оплатить через Paypal?",
+          "Вы принимаете только наличные?"
         ],
         "responses": [
-          "We accept VISA, Mastercard and Paypal",
-          "We accept most major credit cards, and Paypal"
+          "Мы принимаем VISA, Mastercard и Paypal",
+          "Мы принимаем большинство основных кредитных карт и Paypal"
         ]
       },
       {
-        "tag": "delivery",
+        "tag": "доставка",
         "patterns": [
-          "How long does delivery take?",
-          "How long does shipping take?",
-          "When do I get my delivery?"
+          "Сколько времени занимает доставка?",
+          "Сколько длится доставка?",
+          "Когда я получу свой заказ?"
         ],
         "responses": [
-          "Delivery takes 2-4 days",
-          "Shipping takes 2-4 days"
+          "Доставка занимает 2-4 дня"
         ]
       },
       {
-        "tag": "funny",
+        "tag": "шутка",
         "patterns": [
-          "Tell me a joke!",
-          "Tell me something funny!",
-          "Do you know a joke?"
+          "Расскажите анекдот!",
+          "Расскажите что-нибудь смешное!",
+          "Вы знаете анекдот?"
         ],
         "responses": [
-          "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-          "What did the buffalo say when his son left for college? Bison."
+          "Почему хипстер обжег себе рот? Он пил кофе, пока он не остыл.",
+          "Что сказал бизон, когда его сын ушел в колледж? Бизон."
         ]
       }
     ]
