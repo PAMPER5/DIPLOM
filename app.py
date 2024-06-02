@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from chat import get_response
 import json
+import subprocess
 
 app = Flask(__name__)
 
@@ -16,9 +17,10 @@ def receive_message():
 def update_json():
     new_data = request.get_json()
     with open('intents.json', 'w', encoding='utf-8') as json_file:
-        # Установка ensure_ascii=False для сохранения символов в их исходном виде
         json.dump(new_data, json_file, ensure_ascii=False, indent=4)
-    return jsonify({'response': 'JSON успешно обновлён.'})
+    # Запускаем train.py асинхронно, чтобы не блокировать основной поток
+    subprocess.run(['python', 'train.py'], shell=False)
+    return jsonify({'response': 'JSON успешно обновлён и начат процесс обучения.'})
 
 if __name__ == "__main__":
     app.run(debug=True, host='192.168.0.104', port=5000)
