@@ -19,8 +19,8 @@ def update_json():
     with open('intents.json', 'w', encoding='utf-8') as json_file:
         json.dump(new_data, json_file, ensure_ascii=False, indent=4)
     # Запускаем train.py асинхронно, чтобы не блокировать основной поток
-    subprocess.run(['python', 'train.py'], shell=False)
+    subprocess.Popen(['python', 'train.py'], shell=False)
     return jsonify({'response': 'JSON успешно обновлён и начат процесс обучения.'})
 
 if __name__ == "__main__":
-    app.run(debug=True, host='192.168.0.104', port=5000)
+    app.run(debug=True, host='192.168.0.106', port=5000)

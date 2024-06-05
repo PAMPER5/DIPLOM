@@ -25,6 +25,17 @@ model.eval()
 
 bot_name = "МГКИТ"
 
+def save_unanswered_question(question):
+    try:
+        with open('questions.json', 'r+', encoding='utf-8') as file:
+            data = json.load(file)
+            data["questions"].append({"question": question})
+            file.seek(0)
+            json.dump(data, file, ensure_ascii=False, indent=4)
+            file.truncate()
+    except FileNotFoundError:
+        with open('questions.json', 'w', encoding='utf-8') as file:
+            json.dump({"questions": [{"question": question}]}, file, ensure_ascii=False, indent=4)
 
 def get_response(msg):
     sentence = tokenize_russian(msg)
@@ -43,7 +54,8 @@ def get_response(msg):
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
-    
+            
+    save_unanswered_question(msg)
     return "Простите, я Вас не понял..."
 
 
