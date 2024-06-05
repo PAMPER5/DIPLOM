@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_file
 from chat import get_response
 import json
 import subprocess
@@ -26,10 +26,12 @@ def update_json():
 @app.route('/get_questions', methods=['GET'])
 def get_questions():
     # Убедитесь, что путь к файлу безопасен
-    if os.path.exists('questions.json'):
-        return send_from_directory(directory='.', path='questions.json', as_attachment=True)
-    else:
-        return jsonify({'response': 'Файл questions.json не найден.'})
+    # if os.path.exists('questions.json'):
+    #     return send_from_directory(directory='.', path='questions.json', as_attachment=True)
+    # else:
+    #     return jsonify({'response': 'Файл questions.json не найден.'})
+    file_path = 'questions.json'
+    return send_file(file_path, as_attachment=True)
 
 if __name__ == "__main__":
     app.run(debug=True, host='192.168.0.106', port=5000)
